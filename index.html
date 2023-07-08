@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Store</title>
+</head>
+<body class="bg-slate-800 p-8">
+    <div class="w-full mx-auto">
+        <div class="grid grid-cols-1 p-2">
+            <h1 class="text-2xl text-slate-100 hover:text-slate-300 text-center font-extrabold">TIENDA AMIGA</h1>
+        </div>
+        <div class="grid grid-cols-1 p-2">
+            <h1 class="text-lg text-white text-start font-bold">Buscar</h1>
+            <input class="w-full mx-auto mx-6 border-0 outline-0 border-b-2 border-b-slate-600 rounded-sm p-2 bg-neutral-100 placeholder:text-neutral-500 text-neutral-700 " type="text" placeholder="Que desea buscar?" id="task-search" autocomplete="false">
+        </div>
+        <div class="grid grid-cols-1 p-2">
+            <button id="btn-add" class="py-2 rounded-sm bg-cyan-300 hover:bg-cyan-500 w-full">Agregar Producto</button>
+        </div>
+        <div class="grid grid-cols-1">
+            <div class="w-full mx-auto mx-6 md:my-6 p-2" id="form-add-edit" hidden="true">
+                <h1 class="text-lg text-white text-center font-bold">Agregar producto</h1>
+                <form class="p-2 bg-slate-300 hover:bg-slate-400 rounded-sm p-6" id="task-form">
+                    <div class="pt-4">
+                        <label for="task-title">Producto:</label>
+                        <input class="w-full border-0 outline-0 border-b-2 border-b-slate-600 rounded-sm p-2" type="text" placeholder="Nombre del producto..." id="task-title" autocomplete="false">
+                    </div>
+                    <div class="pt-4">
+                        <label for="task-description">Precio:</label>
+                        <textarea class="w-full border-0 outline-0 border-b-2 border-b-slate-600 rounded-sm p-2" placeholder="Precion del producto..." rows="3" id="task-description"></textarea>
+                    </div>
+                    <div class="pt-4">
+                        <label for="task-file">Foto:</label>
+                        <input class="w-full rounded-sm" type="file" id="task-file">
+                    </div>
+                    <div class="pt-4">
+                        <button id="btn-task-save" class="bg-slate-800 py-2 rounded-sm text-slate-300 w-full">Agregar</button>
+                    </div>
+                </form>   
+            </div>
+            <div class="w-full mx-auto mx-6 md:my-6 p-2" id="task-container"></div>
+        </div>
+    </div>
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.7/uuid.min.js"></script>
+</body>
+</html>
