@@ -119,7 +119,9 @@ const reloadTask=(querySnapshot)=>{
     const btnsDelete = taskContainer.querySelectorAll('.btn-delete');
     btnsDelete.forEach(btn =>{
         btn.addEventListener('click', ({target: {dataset}}) =>{
-            deleteTask(dataset.id);
+            let confirmDelete = confirm("Estas seguro que desea elimina el producto?");
+            if(confirmDelete) deleteTask(dataset.id);
+            
         })
     });
 
